@@ -430,6 +430,12 @@ void Nat::PrintTable()
         cout << left << setw(width_str) << setfill(separator) << nat_table->_rows[i]._type_entry;
         cout << endl;
     }
+    cout << horizontal_line << endl;
+    cout << "clientes" << endl;
+    for (int k =0;k<clients.size();k++)
+    {
+        cout << "client ip" << clients[k]._ip << endl;
+    }
 }
 
 int Nat::GenerateEntryID()

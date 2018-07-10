@@ -102,6 +102,23 @@ void ClientSEND_THREAD(int socketFD, bool& online, ClientInfo* client_info)
             if (n < 0) perror("[ Action M ] Error, write in socket");
             else cout << "[ Action M ] OK" << endl;
         }
+        else if (option == 3) //LOGIN
+        {
+            string ip = "";
+            string nickname = "";
+
+            PrintDivision();
+            cout << "[ Action L ] SERVER IP: "; cin >> ip;
+            cout << "[ Action L ] NICKNAME: "; cin >> nickname;
+
+            packageSize = 0;
+            ActionL_PACKAGE(buffer, ip, nickname, packageSize);
+
+            n = write(socketFD, buffer, packageSize);
+
+            if (n < 0) perror("[ Action L ] Error, write in socket");
+            else cout << "[ Action L ] OK" << endl;
+        }
 
         else if (option == OPTION_CLOSE)
         {

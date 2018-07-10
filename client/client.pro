@@ -14,4 +14,6 @@ HEADERS += \
     socket_functions.h \
     protocol_functions.h \
     protocols.h \
-    client_info.h
+    client_info.h \
+    client_server.h \
+    client_server_functions.h
